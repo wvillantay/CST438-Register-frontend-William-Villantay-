@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 
 const StudentRegistration = () => {
@@ -17,7 +18,7 @@ const StudentRegistration = () => {
         e.preventDefault();
         setLoading(false);
         console.log("Student.Save");
-        axios.post(`${SERVER_URL}/enrollment`, student)
+        axios.post(`http://localhost:8081/enrollment`, student)
             .then((respone) => {
                 console.log(respone);
                 setLoading(true);
